@@ -6,6 +6,5 @@
  */
 
 extern bool matrix_invert(double mat[4][4], /*@out@*/ double inverse[4][4]);
-extern void matrix_symmetrize(double mat[4][4], /*@out@*/ double inverse[4][4]);
 
 /* end */
