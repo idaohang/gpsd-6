@@ -80,7 +80,7 @@ int main(int argc UNUSED, char *argv[] UNUSED)
     for (i = 0; i < sizeof(inverses) / sizeof(inverses[0]); i++) {
 	double inverse[4][4];
 	if (!matrix_invert(inverses[i].mat, inverse)) {
-	    printf("Vanishing determinant in test %zd\n", i);
+	    printf("Vanishing determinant in test %zu\n", i);
 	}
 	if (!check_diag(i, inverse, inverses[i].inv))
 	    break;
