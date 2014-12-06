@@ -76,7 +76,7 @@ __locations = [
 
 GPS_EPOCH	= 315964800		# 6 Jan 1981 00:00:00
 SECS_PER_WEEK	= 60 * 60 * 24 * 7	# Seconds per GPS week
-ROLLOVER	= 1024			# 10-bit week rollover 
+ROLLOVER	= 1024			# 10-bit week rollover
 
 def gps_week(t):
     return ((t - GPS_EPOCH)/SECS_PER_WEEK % ROLLOVER)
