@@ -191,10 +191,8 @@ superstar2_msg_svinfo(struct gps_device_t *session,
 	session->gpsdata.skyview[i].azimuth = (unsigned short)getub(buf, off + 2) +
 	    ((unsigned short)(getub(buf, off + 3) & 0x1) << 1);
 	session->gpsdata.skyview[i].used = used;
-	/*@ +charint @*/
 	if (used)
 	    session->sats_used[nsv++] = session->gpsdata.skyview[i].PRN;
-	/*@ -charint @*/
 
 	if (session->gpsdata.skyview[i].PRN)
 	    st++;
