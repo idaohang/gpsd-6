@@ -51,7 +51,7 @@ for i in range(0, len(knobs)):
             failed_configurations.append(command)
             print command
             with open('failed_build_configs.txt', 'a') as failed_configs:
-                failed_configs.write(command + '\n')
+                failed_configs.write(' '.join(command) + '\n')
 
 for row in failed_configurations:
     print ' '.join(row)
