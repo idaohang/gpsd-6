@@ -72,11 +72,11 @@ typedef unsigned int speed_t;
 #endif 
 
 /* Some internal capabilities depend on which drivers we're compiling. */
-#if !defined(NMEA_ENABLE) && (defined(FV18_ENABLE) || defined(MTK3301_ENABLE) || defined(TNT_ENABLE) || defined(OCEANSERVER_ENABLE) || defined(GPSCLOCK_ENABLE) || defined(FURY_ENABLE))
-#define NMEA_ENABLE
-#endif
 #ifdef EARTHMATE_ENABLE
 #define ZODIAC_ENABLE
+#endif
+#if !defined(NMEA_ENABLE) && (defined(FV18_ENABLE) || defined(MTK3301_ENABLE) || defined(TNT_ENABLE) || defined(OCEANSERVER_ENABLE) || defined(GPSCLOCK_ENABLE) || defined(FURY_ENABLE) || defined(ZODIAC_ENABLE))
+#define NMEA_ENABLE
 #endif
 #if defined(ZODIAC_ENABLE) || defined(SIRF_ENABLE) || defined(GARMIN_ENABLE) || defined(TSIP_ENABLE) || defined(EVERMORE_ENABLE) || defined(ITRAX_ENABLE) || defined(UBLOX_ENABLE) || defined(SUPERSTAR2_ENABLE) || defined(ONCORE_ENABLE) || defined(GEOSTAR_ENABLE) || defined(NAVCOM_ENABLE) || defined(NMEA2000_ENABLE)
 #define BINARY_ENABLE
