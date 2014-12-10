@@ -109,8 +109,8 @@ const char *gps_maskdump(gps_mask_t set)
 {
     static char buf[%d];
     const struct {
-	gps_mask_t      mask;
-	const char      *name;
+        gps_mask_t      mask;
+        const char      *name;
     } *sp, names[] = {"""  % (maxout + 3,)
             for (flag, value) in clientside.primitive_masks + daemonside.primitive_masks:
                 stem = flag
@@ -125,12 +125,12 @@ const char *gps_maskdump(gps_mask_t set)
     memset(buf, '\\0', sizeof(buf));
     buf[0] = '{';
     for (sp = names; sp < names + sizeof(names)/sizeof(names[0]); sp++)
-	if ((set & sp->mask)!=0) {
-	    (void)strlcat(buf, sp->name, sizeof(buf));
-	    (void)strlcat(buf, "|", sizeof(buf));
-	}
+        if ((set & sp->mask)!=0) {
+            (void)strlcat(buf, sp->name, sizeof(buf));
+            (void)strlcat(buf, "|", sizeof(buf));
+        }
     if (buf[1] != \'\\0\')
-	buf[strlen(buf)-1] = \'\\0\';
+        buf[strlen(buf)-1] = \'\\0\';
     (void)strlcat(buf, "}", sizeof(buf));
     return buf;
 }
