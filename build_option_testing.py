@@ -6,11 +6,14 @@ always_on = [
 ]
 
 always_off = [
+    'leapfetch',
+]
+
+other = [
     'debug',
     'chrpath',
     'ipv6',
     'manbuild',
-    'leapfetch',
     'nostrip',
     'slow',
     'profiling',
@@ -82,6 +85,9 @@ for i in range(0, len(knobs)):
 
         for key in always_on:
             params.append(key+"=on")
+
+        for key in always_off:
+            params.append(key+"=off")
 
         for key in knobs:
             if key in row:
